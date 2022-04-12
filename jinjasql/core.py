@@ -3,8 +3,15 @@ from jinja2 import Environment
 from jinja2 import Template
 from jinja2.ext import Extension
 from jinja2.lexer import Token
-from jinja2.utils import Markup
 from collections.abc import Iterable
+
+# for jinja2 >= 3.0, for python 3.7
+import jinja2
+if jinja2.__version__[0] >= 3:
+    from jinja2.utils import markupsafe
+    Markup = markupsafe.Markup
+else:
+    from jinja2.utils import Markup
 
 try:
     from collections import OrderedDict
