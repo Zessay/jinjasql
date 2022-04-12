@@ -7,7 +7,7 @@ from collections.abc import Iterable
 
 # for jinja2 >= 3.0, for python 3.7
 import jinja2
-if jinja2.__version__[0] >= 3:
+if jinja2.__version__[0] >= '3':
     from jinja2.utils import markupsafe
     Markup = markupsafe.Markup
 else:
